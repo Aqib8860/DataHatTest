@@ -28,7 +28,10 @@ Run the FastAPI server:
 
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
 
-Create a .env file in the root directory and add:
+## Environment Variables
+
+Create a `.env` file in the root directory and add:
+
 MONGODB_URL=your_mongodb_connection_string
 DB_NAME=your_database_name
 AUTH_SECRET_KEY=your_secret_key
@@ -40,11 +43,15 @@ WEATHER_API_KEY=your_weather_api_key
 REDIS_URL=redis://username:password@host:port/0
 
 
+## API Endpoints
 
-1. Signup
-URL - http://127.0.0.1:8000/user/signup/
-Method - POST
-body - {
+### 1. Signup
+- URL: `http://127.0.0.1:8000/user/signup/`
+- Method: `POST`
+- Body:
+
+```json
+{
     "email": "test3@gmail.com",
     "password": "Test8860@",
     "full_name": "Aqib Khan"
@@ -63,9 +70,10 @@ Response
 
 
 2. Login
-URL - http://127.0.0.1:8000/user/login/
-Method - POST
-body - {
+- URL: http://127.0.0.1:8000/user/login/
+- Method: POST
+- Body:
+{
     "email": "test2@gmail.com",
     "password": "Test8860@"
 }
@@ -84,9 +92,10 @@ Response
 }
 
 3. Refresh Token
-URL - http://127.0.0.1:8000/user/token/refresh/
-Method - POST
-body - {
+URL: http://127.0.0.1:8000/user/token/refresh/
+Method: POST
+- Body: 
+{
     "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0MkBnbWFpbC5jb20iLCJpZCI6IjY4NTI2Y2E2MGU4MDJiMjVmNmRlZWJkMyIsImV4cCI6MTc1MDkzODEyMH0.jm5QYk79W4kS4Bceb9wwt96jY2FKUJsZT4fVB7awxAk"
 }
 
@@ -98,8 +107,8 @@ Response
 }
 
 4. Get News
-URL - http://127.0.0.1:8000/news?query=cricket&language=en&category=sports
-Method - GET
+URL: http://127.0.0.1:8000/news?query=cricket&language=en&category=sports
+Method: GET
 Authentication: Required (Pass access token in Authorization header)
 
 Response
@@ -146,7 +155,7 @@ Response
 }
 
 5. Get Weather 
-URL - http://127.0.0.1:8000/weather?state=Delhi&country=India
+URL: http://127.0.0.1:8000/weather?state=Delhi&country=India
 Method - GET
 
 Authentication: Not required
