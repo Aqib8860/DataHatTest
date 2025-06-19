@@ -80,7 +80,8 @@ REDIS_URL=redis://username:password@host:port/0
 {
     "email": "test2@gmail.com",
     "password": "Test8860@"
-}```
+}
+```
 
 - Response:
 ```json
